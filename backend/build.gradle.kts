@@ -46,6 +46,10 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.6")
     // oauth2
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+    implementation("org.springframework.boot:spring-boot-starter-actuator") // 추가됨
+
+    implementation("org.springframework.boot:spring-boot-starter-data-redis") // 추가됨
+    implementation("org.springframework.session:spring-session-data-redis") // 추가됨
 }
 
 tasks.withType<Test> {
