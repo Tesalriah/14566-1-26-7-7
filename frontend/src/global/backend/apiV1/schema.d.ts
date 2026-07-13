@@ -3,866 +3,566 @@
  * Do not make direct changes to the file.
  */
 
+
 export interface paths {
-    "/api/v1/posts/{postId}/comments/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** 단건 조회 */
-        get: operations["getItem"];
-        /** 수정 */
-        put: operations["modify"];
-        post?: never;
-        /** 삭제 */
-        delete: operations["delete"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/posts/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** 단건 조회 */
-        get: operations["getItem_1"];
-        /** 수정 */
-        put: operations["modify_1"];
-        post?: never;
-        /** 삭제 */
-        delete: operations["delete_1"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/posts": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** 다건 조회 */
-        get: operations["getItems"];
-        put?: never;
-        /** 작성 */
-        post: operations["write"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/posts/{postId}/comments": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** 다건 조회 */
-        get: operations["getItems_1"];
-        put?: never;
-        /** 작성 */
-        post: operations["write_1"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/members": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** 회원가입 */
-        post: operations["join"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/members/login": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** 로그인 */
-        post: operations["login"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/members/me": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** 내 정보 */
-        get: operations["me"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/adm/posts/count": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** 글 갯수 */
-        get: operations["count"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/adm/members": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** 다건 조회 */
-        get: operations["getItems_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/adm/members/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** 단건 조회 */
-        get: operations["getItem_2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/members/logout": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        /** 로그아웃 */
-        delete: operations["logout"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
+  "/api/v1/posts/{postId}/comments/{id}": {
+    /** 단건 조회 */
+    get: operations["getItem"];
+    /** 수정 */
+    put: operations["modify"];
+    /** 삭제 */
+    delete: operations["delete"];
+  };
+  "/api/v1/posts/{id}": {
+    /** 단건 조회 */
+    get: operations["getItem_1"];
+    /** 수정 */
+    put: operations["modify_1"];
+    /** 삭제 */
+    delete: operations["delete_1"];
+  };
+  "/api/v1/posts": {
+    /** 다건 조회 */
+    get: operations["getItems"];
+    /** 작성 */
+    post: operations["write"];
+  };
+  "/api/v1/posts/{postId}/comments": {
+    /** 다건 조회 */
+    get: operations["getItems_1"];
+    /** 작성 */
+    post: operations["write_1"];
+  };
+  "/api/v1/members": {
+    /** 회원가입 */
+    post: operations["join"];
+  };
+  "/api/v1/members/login": {
+    /** 로그인 */
+    post: operations["login"];
+  };
+  "/api/v1/members/me": {
+    /** 내 정보 */
+    get: operations["me"];
+  };
+  "/api/v1/adm/posts/count": {
+    /** 글 갯수 */
+    get: operations["count"];
+  };
+  "/api/v1/adm/members": {
+    /** 다건 조회 */
+    get: operations["getItems_2"];
+  };
+  "/api/v1/adm/members/{id}": {
+    /** 단건 조회 */
+    get: operations["getItem_2"];
+  };
+  "/api/v1/members/logout": {
+    /** 로그아웃 */
+    delete: operations["logout"];
+  };
 }
+
 export type webhooks = Record<string, never>;
+
 export interface components {
-    schemas: {
-        RsDataVoid: {
-            resultCode: string;
-            msg: string;
-            data: unknown;
-        };
-        PostCommentModifyReqBody: {
-            content: string;
-        };
-        PostModifyReqBody: {
-            title: string;
-            content: string;
-        };
-        PostWriteReqBody: {
-            title: string;
-            content: string;
-        };
-        PostWithAuthorDto: {
-            /** Format: int64 */
-            id: number;
-            /** Format: date-time */
-            createDate: string;
-            /** Format: date-time */
-            modifyDate: string;
-            /** Format: int64 */
-            authorId: number;
-            authorName: string;
-            title: string;
-            content: string;
-        };
-        RsDataPostWithAuthorDto: {
-            resultCode: string;
-            msg: string;
-            data: components["schemas"]["PostWithAuthorDto"];
-        };
-        PostCommentWriteReqBody: {
-            content: string;
-        };
-        PostCommentDto: {
-            /** Format: int64 */
-            id: number;
-            /** Format: date-time */
-            createDate: string;
-            /** Format: date-time */
-            modifyDate: string;
-            authorName: string;
-            content: string;
-        };
-        RsDataPostCommentDto: {
-            resultCode: string;
-            msg: string;
-            data: components["schemas"]["PostCommentDto"];
-        };
-        MemberJoinReqBody: {
-            username: string;
-            password: string;
-            nickname: string;
-        };
-        MemberDto: {
-            /** Format: int64 */
-            id: number;
-            /** Format: date-time */
-            createDate: string;
-            /** Format: date-time */
-            modifyDate: string;
-            nickname: string;
-            isAdmin: boolean;
-            profileImageUrl: string;
-        };
-        RsDataMemberDto: {
-            resultCode: string;
-            msg: string;
-            data: components["schemas"]["MemberDto"];
-        };
-        MemberLoginReqBody: {
-            username: string;
-            password: string;
-        };
-        MemberLoginResBody: {
-            item: components["schemas"]["MemberDto"];
-            apiKey: string;
-            accessToken: string;
-        };
-        RsDataMemberLoginResBody: {
-            resultCode: string;
-            msg: string;
-            data: components["schemas"]["MemberLoginResBody"];
-        };
-        AdmPostCountResBody: {
-            /** Format: int64 */
-            all: number;
-        };
-        MemberWithUsernameDto: {
-            /** Format: int64 */
-            id: number;
-            /** Format: date-time */
-            createDate: string;
-            /** Format: date-time */
-            modifyDate: string;
-            nickname: string;
-            username: string;
-            isAdmin: boolean;
-        };
-        PostDto: {
-            /** Format: int64 */
-            id: number;
-            /** Format: date-time */
-            createDate: string;
-            /** Format: date-time */
-            modifyDate: string;
-            title: string;
-            content: string;
-        };
-        RsDataPostDto: {
-            resultCode: string;
-            msg: string;
-            data: components["schemas"]["PostDto"];
-        };
+  schemas: {
+    RsDataVoid: {
+      resultCode: string;
+      msg: string;
+      data: unknown;
     };
-    responses: never;
-    parameters: never;
-    requestBodies: never;
-    headers: never;
-    pathItems: never;
+    PostCommentModifyReqBody: {
+      content: string;
+    };
+    PostModifyReqBody: {
+      title: string;
+      content: string;
+    };
+    PostWriteReqBody: {
+      title: string;
+      content: string;
+    };
+    PostWithAuthorDto: {
+      /** Format: int64 */
+      id?: number;
+      /** Format: date-time */
+      createDate?: string;
+      /** Format: date-time */
+      modifyDate?: string;
+      /** Format: int64 */
+      authorId?: number;
+      authorName?: string;
+      title?: string;
+      content?: string;
+    };
+    RsDataPostWithAuthorDto: {
+      resultCode: string;
+      msg: string;
+      data: components["schemas"]["PostWithAuthorDto"];
+    };
+    PostCommentWriteReqBody: {
+      content: string;
+    };
+    PostCommentDto: {
+      /** Format: int64 */
+      id: number;
+      /** Format: date-time */
+      createDate: string;
+      /** Format: date-time */
+      modifyDate: string;
+      authorName: string;
+      content: string;
+    };
+    RsDataPostCommentDto: {
+      resultCode: string;
+      msg: string;
+      data: components["schemas"]["PostCommentDto"];
+    };
+    MemberJoinReqBody: {
+      username: string;
+      password: string;
+      nickname: string;
+    };
+    MemberDto: {
+      /** Format: int64 */
+      id?: number;
+      /** Format: date-time */
+      createDate?: string;
+      /** Format: date-time */
+      modifyDate?: string;
+      nickname?: string;
+      isAdmin?: boolean;
+      profileImageUrl?: string;
+    };
+    RsDataMemberDto: {
+      resultCode: string;
+      msg: string;
+      data: components["schemas"]["MemberDto"];
+    };
+    MemberLoginReqBody: {
+      username: string;
+      password: string;
+    };
+    MemberLoginResBody: {
+      item?: components["schemas"]["MemberDto"];
+      apiKey?: string;
+      accessToken?: string;
+    };
+    RsDataMemberLoginResBody: {
+      resultCode: string;
+      msg: string;
+      data: components["schemas"]["MemberLoginResBody"];
+    };
+    AdmPostCountResBody: {
+      /** Format: int64 */
+      all?: number;
+    };
+    MemberWithUsernameDto: {
+      /** Format: int64 */
+      id?: number;
+      /** Format: date-time */
+      createDate?: string;
+      /** Format: date-time */
+      modifyDate?: string;
+      nickname?: string;
+      username?: string;
+      isAdmin?: boolean;
+    };
+    PostDto: {
+      /** Format: int64 */
+      id?: number;
+      /** Format: date-time */
+      createDate?: string;
+      /** Format: date-time */
+      modifyDate?: string;
+      title?: string;
+      content?: string;
+    };
+    RsDataPostDto: {
+      resultCode: string;
+      msg: string;
+      data: components["schemas"]["PostDto"];
+    };
+  };
+  responses: never;
+  parameters: never;
+  requestBodies: never;
+  headers: never;
+  pathItems: never;
 }
+
 export type $defs = Record<string, never>;
+
+export type external = Record<string, never>;
+
 export interface operations {
-    getItem: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                postId: number;
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["PostCommentDto"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+
+  /** 단건 조회 */
+  getItem: {
+    parameters: {
+      path: {
+        postId: number;
+        id: number;
+      };
     };
-    modify: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                postId: number;
-                id: number;
-            };
-            cookie?: never;
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["PostCommentDto"];
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["PostCommentModifyReqBody"];
-            };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+      };
     };
-    delete: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                postId: number;
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+  };
+  /** 수정 */
+  modify: {
+    parameters: {
+      path: {
+        postId: number;
+        id: number;
+      };
     };
-    getItem_1: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["PostWithAuthorDto"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["PostCommentModifyReqBody"];
+      };
     };
-    modify_1: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["PostModifyReqBody"];
-            };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+      };
     };
-    delete_1: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataPostDto"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+  };
+  /** 삭제 */
+  delete: {
+    parameters: {
+      path: {
+        postId: number;
+        id: number;
+      };
     };
-    getItems: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["PostWithAuthorDto"][];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
+      };
     };
-    write: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["PostWriteReqBody"];
-            };
-        };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataPostWithAuthorDto"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+  };
+  /** 단건 조회 */
+  getItem_1: {
+    parameters: {
+      path: {
+        id: number;
+      };
     };
-    getItems_1: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                postId: number;
-            };
-            cookie?: never;
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["PostWithAuthorDto"];
         };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["PostCommentDto"][];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
+      };
     };
-    write_1: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                postId: number;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["PostCommentWriteReqBody"];
-            };
-        };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataPostCommentDto"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+  };
+  /** 수정 */
+  modify_1: {
+    parameters: {
+      path: {
+        id: number;
+      };
     };
-    join: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["MemberJoinReqBody"];
-            };
-        };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataMemberDto"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["PostModifyReqBody"];
+      };
     };
-    login: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["MemberLoginReqBody"];
-            };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataMemberLoginResBody"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+      };
     };
-    me: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataMemberDto"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+  };
+  /** 삭제 */
+  delete_1: {
+    parameters: {
+      path: {
+        id: number;
+      };
     };
-    count: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataPostDto"];
         };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["AdmPostCountResBody"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
+      };
     };
-    getItems_2: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+  };
+  /** 다건 조회 */
+  getItems: {
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["PostWithAuthorDto"][];
         };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["MemberWithUsernameDto"][];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
+      };
     };
-    getItem_2: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["MemberWithUsernameDto"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-        };
+  };
+  /** 작성 */
+  write: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["PostWriteReqBody"];
+      };
     };
-    logout: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataPostWithAuthorDto"];
         };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
-                };
-            };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
         };
+      };
     };
+  };
+  /** 다건 조회 */
+  getItems_1: {
+    parameters: {
+      path: {
+        postId: number;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["PostCommentDto"][];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+    };
+  };
+  /** 작성 */
+  write_1: {
+    parameters: {
+      path: {
+        postId: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["PostCommentWriteReqBody"];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataPostCommentDto"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+    };
+  };
+  /** 회원가입 */
+  join: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["MemberJoinReqBody"];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataMemberDto"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+    };
+  };
+  /** 로그인 */
+  login: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["MemberLoginReqBody"];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataMemberLoginResBody"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+    };
+  };
+  /** 내 정보 */
+  me: {
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataMemberDto"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+    };
+  };
+  /** 글 갯수 */
+  count: {
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["AdmPostCountResBody"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+    };
+  };
+  /** 다건 조회 */
+  getItems_2: {
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["MemberWithUsernameDto"][];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+    };
+  };
+  /** 단건 조회 */
+  getItem_2: {
+    parameters: {
+      path: {
+        id: number;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["MemberWithUsernameDto"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+    };
+  };
+  /** 로그아웃 */
+  logout: {
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+        };
+      };
+    };
+  };
 }
