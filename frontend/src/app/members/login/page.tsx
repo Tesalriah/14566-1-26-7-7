@@ -47,7 +47,7 @@ export default withLogout(function Page() {
         }
 
         if (res.data) {
-          setLoginMember(res.data.data.item)
+          setLoginMember(res.data.data.item ?? null)
         }
 
         alert(res.data && res.data.msg)
