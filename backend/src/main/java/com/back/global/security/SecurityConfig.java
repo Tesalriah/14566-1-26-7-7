@@ -42,6 +42,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/*/**").authenticated()
                         .anyRequest().permitAll()
                 )
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .headers(headers -> headers
                         .frameOptions(frameOptions -> frameOptions.sameOrigin())
                 )
